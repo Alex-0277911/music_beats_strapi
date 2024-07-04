@@ -774,7 +774,7 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
     avatar: Attribute.Media;
     favArtists: Attribute.Relation<
       'plugin::users-permissions.user',
-      'oneToMany',
+      'manyToMany',
       'api::artist.artist'
     >;
     favAlbums: Attribute.Relation<
@@ -904,6 +904,11 @@ export interface ApiArtistArtist extends Schema.CollectionType {
         number
       > &
       Attribute.DefaultTo<0>;
+    users: Attribute.Relation<
+      'api::artist.artist',
+      'manyToMany',
+      'plugin::users-permissions.user'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -944,6 +949,36 @@ export interface ApiGenreGenre extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::genre.genre',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiListenerListener extends Schema.CollectionType {
+  collectionName: 'listeners';
+  info: {
+    singularName: 'listener';
+    pluralName: 'listeners';
+    displayName: 'listener';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    artistId: Attribute.Integer;
+    userId: Attribute.Integer;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::listener.listener',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::listener.listener',
       'oneToOne',
       'admin::user'
     > &
@@ -1046,6 +1081,7 @@ declare module '@strapi/types' {
       'api::album.album': ApiAlbumAlbum;
       'api::artist.artist': ApiArtistArtist;
       'api::genre.genre': ApiGenreGenre;
+      'api::listener.listener': ApiListenerListener;
       'api::playlist.playlist': ApiPlaylistPlaylist;
       'api::song.song': ApiSongSong;
     }

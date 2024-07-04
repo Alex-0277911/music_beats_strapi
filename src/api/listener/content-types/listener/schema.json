@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "listeners",
+  "info": {
+    "singularName": "listener",
+    "pluralName": "listeners",
+    "displayName": "listener"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "artistId": {
+      "type": "integer"
+    },
+    "userId": {
+      "type": "integer"
+    }
+  }
+}
