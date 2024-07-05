@@ -1,0 +1,9 @@
+[{
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.beats.music.music_beats",
+      "sha256_cert_fingerprints":
+      ["6B:70:03:6D:5F:D9:E2:9F:F2:98:D9:0A:84:02:8B:48:A4:D4:50:06:19:07:F9:D3:02:D7:A1:40:D8:9B:77:9B"]
+    }
+  }]
