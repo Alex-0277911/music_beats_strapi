@@ -8,56 +8,28 @@ body {
     height: 100vh;
     background: linear-gradient(135deg, #a445b2, #d41872, #ff0066);
     color: white;
+    text-align: center;
+    overflow: hidden;
 }
 
 .container {
     display: flex;
+    flex-direction: column;
     align-items: center;
-}
-
-.phone {
-    width: 300px;
-    height: 600px;
-    background: url('images/phone_screen.png') no-repeat center center;
-    background-size: cover;
-    border-radius: 30px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    overflow: hidden;
-    position: relative;
-    margin-right: 50px;
-}
-
-
-.search-bar {
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-.search-bar input {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
+    padding: 20px;
     box-sizing: border-box;
 }
 
-.artists {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-}
-
-.artist {
-    width: 80px;
-    text-align: center;
-}
-
-.artist img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
+.phone {
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 9 / 16;
+    background: url('images/phone_screen.png') no-repeat center center;
+    background-size: auto 100%;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    margin-bottom: 20px;
 }
 
 .text-container {
@@ -66,7 +38,7 @@ body {
 }
 
 .text-container h1 {
-    font-size: 2em;
+    font-size: 1.5em;
     margin-bottom: 20px;
 }
 
@@ -84,4 +56,14 @@ body {
 .text-container button:hover {
     background: #d41872;
     color: white;
+}
+
+@media (min-width: 600px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .text-container h1 {
+        font-size: 2em;
+    }
 }
