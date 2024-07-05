@@ -1,4 +1,5 @@
 module.exports = [
+  'global::admin-redirect',
   'strapi::logger',
   'strapi::errors',
   'strapi::security',

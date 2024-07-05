@@ -1,0 +1,87 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #a445b2, #d41872, #ff0066);
+    color: white;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.phone {
+    width: 300px;
+    height: 600px;
+    background: url('images/phone_screen.png') no-repeat center center;
+    background-size: cover;
+    border-radius: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    position: relative;
+    margin-right: 50px;
+}
+
+
+.search-bar {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.artists {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.artist {
+    width: 80px;
+    text-align: center;
+}
+
+.artist img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.text-container {
+    max-width: 400px;
+    text-align: center;
+}
+
+.text-container h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.text-container button {
+    background: white;
+    color: #d41872;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.text-container button:hover {
+    background: #d41872;
+    color: white;
+}
